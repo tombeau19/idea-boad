@@ -7,7 +7,6 @@ mongoose.Promise = global.Promise
 //create a new app using express
 const app = express()
 
-
 mongoose.connect(process.env.MONGODB_URI, { useMongoClient: true })
 const connection = mongoose.connection
 
@@ -20,13 +19,13 @@ connection.on('error', (err) => {
 })
 
 //inject middleware
-app.use(bodrParser.json())
+app.use(bodyParser.json())
 
 app.get('/', (req, res) => {
     res.send('Hello World')
 })
 
-const port = process.env.port || 3000
+const port = process.env.port || 3001
 app.listen(port, () => {
     console.log('App listening on port: ', port)
 })
