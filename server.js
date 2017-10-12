@@ -19,10 +19,11 @@ connection.on('error', (err) => {
 })
 
 //inject middleware
+app.use(express.static(`${__dirname}/client/build`))
 app.use(bodyParser.json())
 
 app.get('/', (req, res) => {
-    res.send('Hello World')
+    res.sendFile(`${__dirname}/client/build/index.html`)
 })
 
 const port = process.env.port || 3001
