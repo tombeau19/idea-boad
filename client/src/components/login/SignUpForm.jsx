@@ -12,9 +12,9 @@ class SignUpForm extends Component {
 
     handleChange = (event) => {
         const attribute = event.target.name
-        const updateUser = {...this.state.newUser}
+        const updateUser = { ...this.state.newUser }
         updateUser[attribute] = event.target.value
-        this.setState({newUser: updateUser})
+        this.setState({ newUser: updateUser })
     }
 
     handleSubmit = async (event) => {
@@ -22,9 +22,13 @@ class SignUpForm extends Component {
         const res = await axios.post('/api/users', {
             "user": this.state.newUser
         })
-        console.log(res)
+        const emptyUser = {
+                userName: '',
+                password: ''
+            }
+        this.setState({ newUser: emptyUser })
     }
- 
+
     render() {
         return (
             <div>
