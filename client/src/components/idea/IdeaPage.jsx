@@ -4,7 +4,7 @@ class IdeaPage extends Component {
     render() {
         return (
             <div>
-                im idea page
+               <h1> im idea page</h1>
             </div>
         );
     }

@@ -17,13 +17,13 @@ class App extends Component {
               <Link to='/login'>Log In</Link>
             </div>
             <div>
-              <Link to='/user'>Ideas</Link>
+              <Link to='/idea'>Ideas</Link>
             </div>
           </div>
           <Switch>
             <Route exact path='/' component={HomePage} />
             <Route exact path='/login' component={LogInPage} />
-            <Route exact path='/user' component={IdeaPage} />
+            <Route exact path='/idea/:userId' component={IdeaPage} />
           </Switch>
         </div>
       </Router>
